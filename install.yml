@@ -1,0 +1,9 @@
+---
+- name: "update rhel services"
+  hosts: all
+  tasks:
+  - name: "update rhel services"
+    ansible.builtin.yum:
+      name: '*'
+      state: latest
+
