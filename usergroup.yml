@@ -1,0 +1,14 @@
+---
+- name: "Playbook for creating group in server"
+  hosts: webserver
+  become: True
+  tasks:
+    - name: "create group"
+      ansible.builtin.group:
+        name: AnsibleGroup
+        state: present
+    - name: "create user"
+      ansible.builtin.user:
+        name: test_user
+        state: present
+        group: AnsibleGroup
